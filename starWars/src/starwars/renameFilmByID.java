@@ -16,7 +16,7 @@ import static starwars.StarWars.print;
  *
  * @author timot
  */
-public class Delete {
+public class renameFilmByID {
     public static void main(String[] args) {
         try {
             String strClassName = "com.mysql.jdbc.Driver";
@@ -26,19 +26,21 @@ public class Delete {
             String strUrl = "jdbc:mysql://localhost:3306/" + "test";
 
             Class.forName(strClassName);
-            
-            
+
             Scanner sc = new Scanner(System.in);
-            print("table :");
-            String table = sc.nextLine();
-            print("id du film :");
-            String id = sc.nextLine();
+
+            print("Nouveau titre du film :");
+            String titre = sc.nextLine();
+
+            print("ID du film :");
+            int id = sc.nextInt();
+          
             sc.close();
             
             Connection conn = DriverManager.getConnection(strUrl, login, motdepasse);
-            Statement stDeleteFilm = conn.createStatement();
-            stDeleteFilm.executeUpdate("Delete from " + table + " where id="+id);
+            Statement stRenameFilm = conn.createStatement();
 
+            stRenameFilm.executeUpdate("update films set titre = '"+titre+"' where id="+ id);
             conn.close();
         } catch (ClassNotFoundException e) {
             System.err.println("Driver non charg� !");

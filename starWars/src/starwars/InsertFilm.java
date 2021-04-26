@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 import static starwars.StarWars.print;
 
-public class Insert {
+public class InsertFilm {
 
     public static void main(String[] args) {
         try {
