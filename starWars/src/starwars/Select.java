@@ -21,7 +21,8 @@ public class Select {
             Connection conn = DriverManager.getConnection(strUrl, login, motdepasse);
             Statement stUsers = conn.createStatement();
 
-            ResultSet rsUsers = stUsers.executeQuery("select * from Acces");
+            
+            ResultSet rsUsers = stUsers.executeQuery("select * from acces");
             while (rsUsers.next()) {
                 System.out.print("Id[" + rsUsers.getInt(1) + "]"
                         + rsUsers.getString(2)
