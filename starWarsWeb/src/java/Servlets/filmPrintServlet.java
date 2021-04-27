@@ -13,6 +13,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import starwars.Film;
 import starwars.DAOFilm;
 import static starwars.StarWars.print;
@@ -36,44 +39,63 @@ public class filmPrintServlet extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+
+            DAOFilm daoFilm = new DAOFilm();
+
+          
+            ArrayList daoFilmList = new ArrayList();
+            daoFilmList.addAll(daoFilm.listReadingArrayList("SELECT * FROM films"));
             
-            
-               DAOFilm daoFilm = new DAOFilm();
-        Film filmH = new Film(0, "Là-Haut","2010", 1, 1234.123, 6443.123);
-        daoFilm.addFilm("films", filmH);
-        daoFilm.listReadingConsole("SELECT * FROM films");
-        daoFilm.deleteFilm("films", 67);
-        ArrayList daoFilmList = new ArrayList();
-        daoFilmList.addAll(daoFilm.listReadingArrayList("SELECT * FROM films"));
-        print("\n[daoFilmList] : \n"+daoFilmList);
-        daoFilm.close();
-    
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet filmPrintServlet</title>");            
+            out.println("<title>Servlet filmPrintServlet</title>");
+            out.println("<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet filmPrintServlet at " + request.getContextPath() + "</h1>");
-            out.println("<HTML>\n<BODY>\n" +
-				"<H1>Recapitulatif des informations</H1>\n" +
-				"<UL>\n" +	
-                                "  <LI>Id: "
-				+ request.getParameter("id") + "\n" +
-                                "  <LI>Titre: "
-				+ request.getParameter("titre") + "\n" +
-				"  <LI>Anée de sortie: "
-				+ request.getParameter("anneeDeSortie") + "\n" +
-				"  <LI>Numéro épisode: "
-				+ request.getParameter("numEpisode") + "\n" +
-                                "  <LI>Coût: "
-				+ request.getParameter("cout") + "\n" +
-                                "  <LI>Recette: "
-				+ request.getParameter("recette") + "\n" +
-				"</UL>\n");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("<div class=\"container\">"
+                    + "<div class=\"row\">"
+                    + "<div class=\"col-12\">"
+                  
+                    + "                    <table class=\"table\">"
+                    + "                    <thead>"
+                    + "                    <tr>"
+                    + "                    <th scope=\"col\">Id</th>"
+                    + "                    <th scope=\"col\">Titre</th>"
+                    + "                    <th scope=\"col\">Année</th>"
+                    + "                    <th scope=\"col\">Numéro de l'épisode</th>"
+                    + "                    <th scope=\"col\">Coût</th>"
+                    + "                    <th scope=\"col\">Recette</th>"
+                    + "                    </tr>"
+                    + "                    </thead>"
+                    + "                    <tbody>");
+
+                    for (Iterator it = daoFilmList.iterator(); it.hasNext();) {
+                    Film film = (Film) it.next();
+                    out.println(""
+                    +"<tr>"
+                    +"<th scope=\"row\">"+film.getId()+"</th>"
+                    +"<td>"+film.getTitre()+"</td>"
+                    +"<td>"+film.getAnneeDeSortie()+"</td>"
+                    +"<td>"+film.getNumEpisode()+"</td>"
+                    +"<td>"+film.getCout()+"</td>"
+                    +"<td>"+film.getRecette()+"</td>"
+                    
+                    +"</tr>");
+                                }
+                                
+                    out.println(""
+                    + "</tbody>"
+                    + "</table>"
+                    + "</div>"
+                    + "</div>"
+                    + "</div>"
+                    + "</body>"
+                    + "</html>"
+                    + "");
+                   
+                    daoFilm.close();
         }
     }
 
@@ -89,7 +111,11 @@ public class filmPrintServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(filmPrintServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -103,7 +129,11 @@ public class filmPrintServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(filmPrintServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
