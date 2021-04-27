@@ -85,15 +85,6 @@ public class StarWars {
         
         
         
-        DAOFilm daoFilm = new DAOFilm();
-        Film filmH = new Film(0, "Là-Haut","2010", 1, 1234.123, 6443.123);
-        daoFilm.addFilm("films", filmH);
-        daoFilm.listReadingConsole("SELECT * FROM films");
-        daoFilm.deleteFilm("films", 67);
-        ArrayList daoFilmList = new ArrayList();
-        daoFilmList.addAll(daoFilm.listReadingArrayList("SELECT * FROM films"));
-        print("\n[daoFilmList] : \n"+daoFilmList);
-        daoFilm.close();
         
         
         
@@ -125,6 +116,12 @@ public class StarWars {
         }
     }
 
+    
+    
+    
+    
+    
+    
 //	public static void makeBackUp(HashMap dicof)	
 //	{
 //		for(Film f : dicof) {

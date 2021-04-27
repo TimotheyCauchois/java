@@ -1,11 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee          http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>starWarsWeb</display-name>
+    <servlet>
+        <servlet-name>filmPrintServlet</servlet-name>
+        <servlet-class>Servlets.filmPrintServlet</servlet-class>
+        <init-param>
+            <param-name>id</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>titre</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>anneDeSortie</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>numEpisode</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cout</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>recette</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>filmAddServlet</servlet-name>
+        <servlet-class>Servlets.filmAddServlet</servlet-class>
+        <init-param>
+            <param-name>titre</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>anneDeSortie</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>numEpisode</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cout</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>recette</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>filmUpdateServlet</servlet-name>
+        <servlet-class>Servlets.filmUpdateServlet</servlet-class>
+        <init-param>
+            <param-name>titre</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>anneDeSortie</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>numEpisode</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cout</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>recette</param-name>
+            <param-value>valeur1</param-value>
+        </init-param>
+    </servlet>
 
-
-<root>
-    
-</root>
+    <servlet-mapping>
+        <servlet-name>filmAddServlet</servlet-name>
+        <url-pattern>/filmAddServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>filmUpdateServlet</servlet-name>
+        <url-pattern>/filmUpdateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>filmPrintServlet</servlet-name>
+        <url-pattern>/filmPrintServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

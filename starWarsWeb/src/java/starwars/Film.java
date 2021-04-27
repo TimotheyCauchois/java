@@ -44,6 +44,7 @@ public class Film {
         this.recette = recette;
 
     }
+
     public ArrayList<Acteur> getActeurs() {
         return acteurs;
     }
@@ -100,6 +101,7 @@ public class Film {
         this.id = id;
     }
 
+    @Override
     public String toString() {
         return "Classe : " + this.getClass().getName() + "\nTitre : " + this.titre + "\nAnn�e de sortie : " + this.anneeDeSortie
                 + "\nNum�ro d'�pisode : " + this.numEpisode + "\nCo�t : " + this.cout + "\nRecette :" + this.recette + "\nActeurs :" + this.acteurs;
