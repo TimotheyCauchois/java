@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/Film.java</file>
+            <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/DAOFilm.java</file>
+            <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/Acteur.java</file>
+            <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/Personnage.java</file>
+            <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/Delete.java</file>
             <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/StarWars.java</file>
+            <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/renameFilmByID.java</file>
+            <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/Select.java</file>
+            <file>file:/C:/Users/timot/OneDrive/Documents/NetBeansProjects/starWars/src/starwars/InsertFilm.java</file>
         </group>
     </open-files>
 </project-private>
