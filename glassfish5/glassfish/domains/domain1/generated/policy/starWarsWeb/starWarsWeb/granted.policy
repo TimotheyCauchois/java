@@ -1,0 +1,21 @@
+/* AUTOMATICALLY GENERATED ON Wed Jun 23 12:26:30 CEST 2021*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.WebUserDataPermission "/";
+  permission javax.security.jacc.WebResourcePermission "/";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "**";
+  permission javax.security.jacc.WebRoleRefPermission "", "**";
+  permission javax.security.jacc.WebRoleRefPermission "FilmMiseAJour", "**";
+  permission javax.security.jacc.WebRoleRefPermission "FilmSaisiResultat", "**";
+  permission javax.security.jacc.WebRoleRefPermission "FilmListe", "**";
+  permission javax.security.jacc.WebRoleRefPermission "FilmSuppression", "**";
+  permission javax.security.jacc.WebRoleRefPermission "AvisSaisiResultat", "**";
+  permission javax.security.jacc.WebRoleRefPermission "FilmSaisi", "**";
+  permission javax.security.jacc.WebRoleRefPermission "AvisSaisi", "**";
+  permission javax.security.jacc.WebRoleRefPermission "default", "**";
+};
+

@@ -116,7 +116,7 @@ public class DAOFilm {
      */
     public void addFilm(String tableBDD, Film film) throws SQLException{
         try{
-            String sql = "INSERT INTO "+tableBDD+" (`titre`, `anneeDeSortie`, `numeroEpisode`, `cout`, `recette`) VALUES ";
+            String sql = "INSERT INTO "+tableBDD+" (`titre`, `anneeDeSortie`, `nimEpisode`, `cout`, `recette`) VALUES ";
             String sqlElements = "("
                             +"\""+film.getTitre()+"\""+","
                             +"\""+film.getAnneeDeSortie()+"\""+","

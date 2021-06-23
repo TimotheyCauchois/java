@@ -2,92 +2,60 @@
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee          http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <display-name>starWarsWeb</display-name>
     <servlet>
-        <servlet-name>filmPrintServlet</servlet-name>
-        <servlet-class>Servlets.filmPrintServlet</servlet-class>
-        <init-param>
-            <param-name>id</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>titre</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>anneDeSortie</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>numEpisode</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>cout</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>recette</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
+        <servlet-name>FilmSuppression</servlet-name>
+        <servlet-class>Controllers.FilmSuppression</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>filmAddServlet</servlet-name>
-        <servlet-class>Servlets.filmAddServlet</servlet-class>
-        <init-param>
-            <param-name>titre</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>anneDeSortie</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>numEpisode</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>cout</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>recette</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
+        <servlet-name>FilmListe</servlet-name>
+        <servlet-class>Controllers.FilmListe</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>filmUpdateServlet</servlet-name>
-        <servlet-class>Servlets.filmUpdateServlet</servlet-class>
-        <init-param>
-            <param-name>titre</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>anneDeSortie</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>numEpisode</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>cout</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
-        <init-param>
-            <param-name>recette</param-name>
-            <param-value>valeur1</param-value>
-        </init-param>
+        <servlet-name>FilmSaisi</servlet-name>
+        <servlet-class>Controllers.FilmSaisi</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>FilmSaisiResultat</servlet-name>
+        <servlet-class>Controllers.FilmSaisiResultat</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FilmMiseAJour</servlet-name>
+        <servlet-class>Controllers.FilmMiseAJour</servlet-class>  
+    </servlet>
+    <servlet>
+        <servlet-name>AvisSaisi</servlet-name>
+        <servlet-class>Controllers.AvisSaisi</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AvisSaisiResultat</servlet-name>
+        <servlet-class>Controllers.AvisSaisiResultat</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
-        <servlet-name>filmAddServlet</servlet-name>
-        <url-pattern>/filmAddServlet</url-pattern>
+        <servlet-name>FilmSaisi</servlet-name>
+        <url-pattern>/FilmSaisi</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>filmUpdateServlet</servlet-name>
-        <url-pattern>/filmUpdateServlet</url-pattern>
+        <servlet-name>FilmSaisiResultat</servlet-name>
+        <url-pattern>/FilmSaisiResultat</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>filmPrintServlet</servlet-name>
-        <url-pattern>/filmPrintServlet</url-pattern>
+        <servlet-name>FilmMiseAJour</servlet-name>
+        <url-pattern>/FilmMiseAJour</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FilmListe</servlet-name>
+        <url-pattern>/FilmListe</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FilmSuppression</servlet-name>
+        <url-pattern>/FilmSuppression</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AvisSaisi</servlet-name>
+        <url-pattern>/AvisSaisi</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AvisSaisiResultat</servlet-name>
+        <url-pattern>/AvisSaisiResultat</url-pattern>
     </servlet-mapping>
 </web-app>
